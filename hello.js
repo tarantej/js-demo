@@ -774,11 +774,121 @@ console.log(today.getDay()); // Day of the week starts from Sunday
 
 console.log(today.getFullYear());
 
-//  Conditional logic (If, If-Else and Comparison operators)
+/*--------------------------------------------------------------------------------------------------- */
 
-//  If statement
+
+//  Conditional logic (If, If-Else and Comparison operators)
 
 /*
 
+ - Equals sign(=) -> Assigning value to varialbe
+ - Double Equal sign(==) -> Comparing the values of the variables
+ - Triple Equal sign(===) -> Comaparing the value and data type of the variable
+ - Exclaimation with equal (!=,!==) -> NOT Operator
+ - Double ampersand(&&) -> AND operator
+ - Double Pipe(||) -> OR Operator
+ - Question mark(?) -> Ternary Operator for if conditions
+ - Color(:) -> Ternary operator for else condition
+ - NOTE: Curly braces ({}) are optional in JavaScript, but still recommended syntax-wise
 
 */
+
+//  If statement
+
+const id = '100';
+
+//  Equals to(==)
+
+if (id == 100) {
+    console.log('correct');
+} else {
+    console.log('incorrect');
+}
+
+//  Not Equals to(!=)
+
+if (id != 101) {
+    console.log('correct');
+} else {
+    console.log('incorrect');
+}
+
+//   Equals to values and data type (===)
+
+if (id === 100) {
+    console.log('correct');
+} else {
+    console.log('incorrect');
+}
+
+
+//   Not equals to values and data type (!==)
+
+if (id !== 100) {
+    console.log('correct');
+} else {
+    console.log('incorrect');
+}
+
+//  Typeof operator
+
+if (typeof id !== 'string') {
+    console.log(`ID: ${id}`);
+} else {
+    console.log('No ID defined');
+}
+
+//  Greater or Less than (>,<)
+
+if (id >= 200) {
+    console.log('correct');
+} else {
+    console.log('incorrect');
+}
+
+if (id <= 200) {
+    console.log('correct');
+} else {
+    console.log('incorrect');
+}
+
+//  If-Else statement
+
+const color = 'yellow';
+
+if (color === 'red') {
+    console.log(`Color is ${color}`)
+} else if (color === 'blue') {
+    console.log(`Color is ${color}`)
+} else {
+    console.log('Color is niether red nor blue');
+}
+
+//  Logical operators
+
+//  AND operator (&&)
+
+const Pname = 'Steve';
+const Page = 20;
+
+if (Page > 0 && Page < 12) {
+    console.log(`${Pname} is a child`);
+} else if (Page >= 13 && Page <= 19) {
+    console.log(`${Pname} is a teenager`);
+} else if (Page >= 20 && Page <= 35) {
+    console.log(`${Pname} is a young adult`)
+} else {
+    console.log(`${Pname} is an adult`)
+}
+
+// OR operator (||)
+
+if (Page >= 16 || Page <= 65) {
+    console.log(`${Pname} cannot run in race`);
+} else {
+    console.log(`${Pname} can run in race`);
+}
+
+//  Ternary operators (?,:)
+
+console.log(id === 100 ? 'correct' : 'incorrect');
