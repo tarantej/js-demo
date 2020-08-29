@@ -892,3 +892,70 @@ if (Page >= 16 || Page <= 65) {
 //  Ternary operators (?,:)
 
 console.log(id === 100 ? 'correct' : 'incorrect');
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Switches
+
+
+/* 
+
+
+*/
+
+//  Changing colors using switch
+
+const col = 'red'
+
+switch (col) {
+    case 'red':
+        {
+            console.log(`Color is ${col}`);
+            break;
+        }
+    case 'blue':
+        {
+            console.log(`Color is ${col}`);
+            break;
+        }
+    default:
+        {
+            console.log('Color is niether red nor blue');
+            break;
+        }
+}
+
+//  Trying age example with switch
+
+//  Not working as expected
+
+const humanName = 'Jackson';
+const humanAge = 15;
+
+switch (humanAge) {
+
+    case (humanAge > 0 && humanAge < 12):
+        {
+            console.log(`${humanName} is a child`);
+            break;
+        }
+
+    case (humanAge >= 13 && humanAge <= 19):
+        {
+            console.log(`${humanName} is a teenager`);
+            break;
+        }
+    case (humanAge >= 0 && humanAge <= 35):
+        {
+            console.log(`${humanName} is a young adult`);
+            break;
+        }
+    default:
+        {
+            console.log(`${humanName} is an adult`);
+            break;
+        }
+} /*--------------------------------------------------------------------------------------------------- */
+
+//  Function declaration and expressions
