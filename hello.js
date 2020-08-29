@@ -1096,3 +1096,133 @@ tasklist.delete = function(id) {
 
 
 tasklist.delete(30);
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Loops and Iterattions
+
+
+/* 
+
+- Loop is a specific instruction that keeps repeating untial a condition is reached
+- General loops(For, While, Do...While)
+- Array specific iterations(Foreach, Map)
+- Object iteration for key value pairs(For, Which)
+- You cannot use a const inside a loop as it keeps changing
+
+*/
+
+//  For Loop - When you know how many interations you are going to have
+
+for (let i = 0; i < 10; i++) {
+    //console.log(i);
+    //Conditional statement
+    if (i === 2) {
+        console.log('My Favortite Number is ' + i);
+
+        //  In case of more than one loop, the continue stateent will break the current ieration and continue to the next iteration
+
+        continue;
+    }
+
+    if (i === 5) {
+        //   Break statement stops the loop
+        break;
+    }
+    console.log(i);
+}
+
+//  While loop - When you dont know how many interations you are going to have
+
+let j = 0;
+while (j < 10) {
+    console.log(j);
+    j++;
+}
+
+//  Do...While loop - Always going to run atleast once
+
+let k = 100;
+do {
+    console.log(k);
+    k++
+}
+while (k < 10);
+
+//  Loop through Arrays
+
+const sportcars = ['Mustang', 'Ferrari', 'McLaren', 'Lamborghini', 'Porsche', 'Koensigg'];
+
+for (let c = 0; c < sportcars.length; c++) {
+    //console.log(c);
+    //  Display car names
+    // console.log(sportcars[c]);
+}
+
+//  Foreach - takes in a callback function
+
+// sportcars.forEach(function(sc) {
+//     console.log(sc);
+// });
+
+//  Foreach index
+
+sportcars.forEach(function(index, sc, array) {
+    // console.log(`${index}:${sc}`);
+
+    console.log(array);
+});
+
+//  Map - Used to return a different array
+
+const taskList = [
+
+    {
+        id: 1,
+        task: 'Learn Javascript',
+        isCompleted: true,
+    },
+
+    {
+        id: 2,
+        task: 'Learn React',
+        isCompleted: false,
+    },
+
+    {
+        id: 3,
+        task: 'Create Portfolio',
+        isCompleted: false,
+    }
+
+]
+const tasks = taskList.map(function(tsk) {
+    return tsk.id, tsk.task;
+});
+
+console.log(tasks); //
+
+//  For In loop - For object key value pairs
+
+const user = {
+    fname: 'John',
+    lname: 'Doe',
+    age: 40
+}
+
+for (let x in user) {
+    // console.log(x) //x only gives the key names
+    console.log(`${x}:${user[x]}`) //   Gives key value pair
+}
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Window Object
+
+
+/* 
+
+
+*/
