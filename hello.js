@@ -1075,3 +1075,24 @@ console.log(square3()); //  Output is 9
 - When a function is put inside a object, it is called a method
 
  */
+
+const tasklist = {
+    add: function() {
+        console.log('Add Task');
+    },
+    edit: function(id) {
+        console.log(`Edit Task ${id}`);
+    }
+}
+
+tasklist.add();
+tasklist.edit(22);
+
+// Defining property methods outside of the function
+
+tasklist.delete = function(id) {
+    console.log(`Delete Task ${id}`);
+}
+
+
+tasklist.delete(30);
