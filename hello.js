@@ -959,3 +959,119 @@ switch (humanAge) {
 } /*--------------------------------------------------------------------------------------------------- */
 
 //  Function declaration and expressions
+
+/* 
+
+ - Blocks of code that an be defined and then called at a later time
+ - Different types of functions
+ - Function Declaration
+ - Function Expression
+ - IIFE (Immediately invokable function expression)
+ - Property Methods
+
+ - Can take in Parameters / Arguments
+
+
+
+*/
+
+//  Function Declaration
+
+
+function grrr() {
+    //  Anything inside this is the function scope
+
+    //console.log('Hello');
+
+    return 'Hello';
+}
+
+//  Function output
+
+console.log(grrr());
+
+//  Adding Parameters / Arguments
+
+function unihuman(FirstName, LastName) {
+
+    return 'Hello ' + FirstName + ' ' + LastName;
+}
+
+//  If you output the method without the parameters, you get undefined unless you mention default values in the method
+
+console.log(unihuman()); // Hello undefined undefined (Without parameters and undefined default values)
+
+function defhuman(FirstName = 'Jackson', LastName = 'Briggs'
+    /*Adding default values*/
+) {
+
+    return 'Hello ' + FirstName + ' ' + LastName;
+}
+
+//  If you define the parameters in the method and then output the method without the parameters, you get output of default values from the method
+
+console.log(defhuman()); // Hello Jackson Brigs (Without parameters and defined default values)
+
+function human(FirstName, LastName) {
+
+    return 'Hello ' + FirstName + ' ' + LastName;
+}
+
+//  If you output the method with the parameters, you get output of values defined in the variable
+
+console.log(human(FirstName, LastName)); // Hello William Jhonson
+
+//  Function Expression 
+
+/*
+
+- Putting a function as a variable assignment
+- Can be named (function square
+(){}) or Anonymous(function(){})
+
+- Using a declaration or expression does not make much difference unless we are using advanced features such as hoisting, closures etc. 
+
+ */
+
+const square = function(x) {
+    return x * x
+};
+
+console.log(square(8)); //  Output is 64
+
+//  Adding default value
+
+const square3 = function(x = 3) {
+    return x * x
+};
+
+console.log(square3()); //  Output is 9
+
+// Immediately Invokeable Function Expressions (IIFE)
+
+/*
+
+- Functions that you can declare and run at the same time
+- Useful in certain design patterns such as module patterns
+
+ */
+
+//  Syntax
+
+// (function() {
+//     console.log('IIFE Ran...');
+// })();
+
+//  Parameters
+
+(function(humanName) {
+    console.log('Hi ' + humanName);
+})(humanName);
+
+//  Property Methods
+
+/*
+
+- When a function is put inside a object, it is called a method
+
+ */
