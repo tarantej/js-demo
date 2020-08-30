@@ -1224,5 +1224,107 @@ for (let x in user) {
 
 /* 
 
+- The window is the global object in the client side javascript
+- Both Google chrome and JavaScript use the same V8 browser engine
+- Window Methods
+- Window Objects
+- Window properties 
+
+*/
+
+
+//  Window Methods
+
+//  Alert
+
+// alert('Hello');
+
+//  Prompt
+
+// const input = prompt();
+
+// alert(input);
+
+//  Confirm
+
+// if (confirm('Are you sure')) {
+//     console.log('yes');
+//  }else{
+//  console.log('no');
+//  }
+// }
+
+//  Window Properties
+
+
+
+//  Outer window width and height
+
+let OHW;
+
+OHW = window.outerHeight;
+OHW = window.outerWidth;
+
+console.log(OHW);
+
+
+//  Inner window width and height
+
+let IHW;
+
+IHW = window.innerHeight;
+IHW = window.innerWidth;
+
+console.log(IHW);
+
+//  Scroll points
+
+let SCP;
+
+SCP = window.scrollY;
+SCP = window.scrollX;
+
+console.log(SCP);
+
+//  Location object
+
+let loc;
+
+// loc = window.location;
+// loc = window.location.hostname;
+
+//  Redirect
+
+// loc = window.location.href;
+
+//  Reload
+
+// loc = window.location.reload();
+
+
+// console.log(loc); // Outputs the current web address location properties
+
+//  History object - Navigates forward / backward to the websites we have visited
+
+let his;
+// his = window.history.go();
+
+//  History length
+
+// his = window.history.length();
+
+// console.log(his);
+
+//  Navigator Object - Deals with the browser
+
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Block Scope with let and const
+
+
+/* 
+
 
 */
