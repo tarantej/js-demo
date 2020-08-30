@@ -1326,5 +1326,60 @@ let his;
 
 /* 
 
+- var is a global scope variable
+- var can have a different value on the  same variable name that does not affect the output in the function scope
+- value of var gets changed in the block level scope while let and const are unaffected
+- using var is a severe security risk
+- 
+- let and const are method scope variable
+
+*/
+
+//  Global scope
+
+
+var a = 1;
+let b = 2;
+const c = 3;
+
+//  Function Scope
+
+// function test() {
+//     var a = 4;
+//     let b = 5;
+//     const c = 6;
+
+//     console.log('Function Scope: ', a, b, c);
+// }
+
+// test();
+
+
+
+//  Block Level scope
+
+// if (true) {
+//     var a = 4;
+//     let b = 5;
+//     const c = 6;
+//     console.log('Block level scope', a, b, c);
+// }
+
+//  Testing with loop
+
+for (let a = 0; a <= 10; a++) {
+    console.log(a);
+}
+
+console.log('Global Scope: ', a, b, c);
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  DOM Manupilation & Events
+
+
+/* 
+
+- DOM stands for Document Object Model
 
 */
