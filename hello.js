@@ -1,3 +1,10 @@
+/*--------------------------------------------------------------------------------------------------- */
+
+//  JavaScript Fundamentals
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
 //Single line comments
 
 /* Multi 
@@ -1377,9 +1384,30 @@ console.log('Global Scope: ', a, b, c);
 
 //  DOM Manupilation & Events
 
+/*--------------------------------------------------------------------------------------------------- */
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  What is the DOM ?
+
 
 /* 
 
 - DOM stands for Document Object Model
+- Tree of Nodes / Elements created by the browser
+- JavaScript can be used to read/write/manupilate to the DOM
+- Object Oriented Representation 
+
+*/
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Examining the Document Object
+
+
+/* 
+
+
 
 */
