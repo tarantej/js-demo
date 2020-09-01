@@ -448,29 +448,29 @@ let html;
 
 //  Inserting data in JavaScript without template strings
 
-html = '<ul><li>Name: ' + Name + '</li></li>Age: ' + age +
-    ' </li><li>Job: ' +
-    Job + '</li> <li>City: ' +
-    City + ' </li><li>Country: ' +
-    Country + '</li> </ul>';
+// html = '<ul><li>Name: ' + Name + '</li></li>Age: ' + age +
+//     ' </li><li>Job: ' +
+//     Job + '</li> <li>City: ' +
+//     City + ' </li><li>Country: ' +
+//     Country + '</li> </ul>';
 
 //  Arranging string in proper lines
 
-html = '<ul>' +
-    '<li>Name: ' + Name + '</li></li>Age: ' + age +
-    ' </li>' +
-    '<li>Job: ' +
-    Job + '</li>' +
-    '<li>City: ' +
-    City + ' </li>' +
-    '<li>Country: ' +
-    Country + '</li>' +
-    '</ul>';
+// html = '<ul>' +
+//     '<li>Name: ' + Name + '</li></li>Age: ' + age +
+//     ' </li>' +
+//     '<li>Job: ' +
+//     Job + '</li>' +
+//     '<li>City: ' +
+//     City + ' </li>' +
+//     '<li>Country: ' +
+//     Country + '</li>' +
+//     '</ul>';
 
 
 //  Output HTML via DOM (Document Object Method)
 
-document.body.innerHTML = html;
+// document.body.innerHTML = html;
 
 
 //  Concatenation using Template Literals / Template Strings
@@ -499,7 +499,7 @@ html = `<ul>
 
 </ul>`;
 
-document.body.innerHTML = html;
+// document.body.innerHTML = html;
 
 /*--------------------------------------------------------------------------------------------------- */
 
@@ -1404,6 +1404,142 @@ console.log('Global Scope: ', a, b, c);
 /*--------------------------------------------------------------------------------------------------- */
 
 //  Examining the Document Object
+
+
+/* 
+
+- Look at the properties of the Document Object
+- Document is a property of the Window object
+- JQuery no longer needed with the advancements of JavaScript
+- DOM can give us different type of structures, such as HTML collection 
+
+*/
+
+//Initialize variable for calling document properties
+
+let doc;
+
+
+//  Entire document - Starting from <!DOCTYPE html> tag to the ending </html> tag including all tags in between
+
+doc = document;
+
+//  HTML Collection - Formatted like an array but you cannot use array methods on it such as Foreach loop
+
+//  Node List - Array collection that can be used with Foreach loop
+
+//  Fetch entire HTML collection
+
+doc = document.all;
+
+//  Accessing HTML Collection Indexes;  They are zero based just like an array
+
+doc = document.all[0];
+
+//  Number of elements in the DOM
+
+doc = document.all.length;
+
+//  Accessing only the head property
+
+doc = document.head;
+
+//  Accessing only the body property
+
+doc = document.body;
+
+//  Accessing only the !DOCTYPE property
+
+doc = document.doctype;
+
+//  Accessing the domain
+
+doc = document.domain;
+
+//  Accessing URL
+
+doc = document.URL;
+
+//  Accessing Character Set
+
+doc = document.characterSet;
+
+//  Accessing Content Type
+
+doc = document.contentType;
+
+//  Accessing Document properties without selectors (NOT RECOMMENDED)
+
+//  Accessing all the forms
+
+doc = document.forms;
+
+//  Accessing single form
+
+doc = document.forms[0];
+
+//  Accessing form properties
+
+doc = document.forms[0].id; //  Form ID
+
+doc = document.forms[0].method; //  Form Method
+
+doc = document.forms[0].action; //  Form Action
+
+//  Accessing document links
+
+doc = document.links;
+
+//  Accessing single link properties
+
+doc = document.links[0]; // All properties
+
+doc = document.links[0].id //  Link ID
+
+doc = document.links[0].className //    Link classes
+
+doc = document.links[0].classList //    Collection of Link classes
+
+//  Accessing document images
+
+doc = document.images;
+
+//  Accessing document scripts
+
+doc = document.scripts;
+
+//  Accessing document script attriutes
+
+doc = document.scripts[2].getAttribute('src');
+
+//  Accessing forEach without converting to Array
+
+let scri = document.scripts;
+
+// scri.forEach(function(sci) {
+//     console.log(sci); //  Uncaught TypeError: scri.forEach is not a function
+// });
+
+//  Convert HTML Collection to Array
+
+let scriArr = Array.from(scri);
+
+scriArr.forEach(function(sci) {
+    console.log(sci);
+
+    //  getAttribute
+
+    console.log(sci.getAttribute('src'));
+});
+
+
+
+
+console.log(doc);
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  DOM Selectors for Single Elements
 
 
 /* 
