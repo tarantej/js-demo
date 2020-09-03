@@ -1644,6 +1644,134 @@ console.log(document.querySelector('li:nth-child(even)').style.color = 'pink');
 
 /* 
 
+ - Return HTML Collection or Node list which are similar to arrays except with certain limitations
+ - Can be converted to arrays
+
+
+*/
+
+//  docuemnt.getElementsByClassName
+
+const items = document.getElementsByClassName('collection-item'); //    Each item has a class of 'collection-item'
+
+console.log(items);
+
+//  To get a single item
+
+console.log(items[0]);
+
+//  Change color
+
+console.log(items[0].style.color = 'red');
+
+//  Change content
+
+console.log(items[3].textContent = '3rd Item');
+
+//  document.getElementsByClassName do not need to be used on aglobal scope
+
+//  Via Query Selector
+
+const listItems = document.querySelector('ul').getElementsByClassName('collection-item');
+
+console.log(listItems); //   Added a DIV with class of collection-item. The Output shows the DIV as thepart of the collection / node list. Can be attached to single elements
+
+//  document.getElementsByTagName
+
+let tagitems = document.getElementsByTagName('li');
+
+console.log(tagitems);
+
+//  To get a single item
+
+console.log(tagitems[0]);
+
+//  Change color
+
+console.log(tagitems[0].style.color = 'red');
+
+//  Change content
+
+console.log(tagitems[3].textContent = '3rd Item');
+
+//  Convert HTMLCollection to Array
+
+tagitems = Array.from(tagitems);
+
+//  Array Reverse method
+
+rev = tagitems.reverse();
+console.log(rev);
+
+//  forEach
+
+tagitems.forEach(function(li, index) {
+    console.log(li);
+
+    //  Output class names
+
+    console.log(li.className);
+
+    //  Change Text Content
+
+    console.log(li.textContent = 'Hello');
+
+    //  Passing index and Template iterals
+
+    console.log(li.textContent = `${index}:Hello`);
+
+})
+
+//  document.querySelectorAll
+
+/*
+    
+- Similar to previous collection except that outputs are generated to a nodelist
+- Enables use of array methods such as reverse() and forEach without needing to convert the collection to an array before doing operations on them
+    
+*/
+
+const qsaitems = document.querySelectorAll('ul.collection li.collection-item');
+
+console.log(qsaitems);
+
+//  forEach
+
+qsaitems.forEach(function(li, index) {
+    console.log(li);
+
+    //  Output class names
+
+    console.log(li.className);
+
+    //  Change Text Content
+
+    console.log(li.textContent = 'Hello');
+
+    //  Passing index and Template iterals
+
+    console.log(li.textContent = `${index}:Hello`);
+
+    //  Odd / Even
+
+    const liOdd = document.querySelectorAll('li:nth-child(odd)');
+    const liEven = document.querySelectorAll('li:nth-child(even)');
+
+    liOdd.forEach(function(li, index) {
+        li.style.background = '#ccc';
+    });
+
+    // console.log(document.querySelectorAll('li:nth-child(odd)').style.background = '#ccc');
+    // console.log(document.querySelectorAll('li:nth-child(even)').style.background = 'aqua');
+
+})
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Traversing the DOM
+
+
+/* 
 
 
 
