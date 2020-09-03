@@ -1544,6 +1544,107 @@ console.log(doc);
 
 /* 
 
+- Document Object Methods that allow to pull objects and manupilate them in the DOM
+- Jquery was initially used for this purpose but JS has become more powerful and able to perform tasks that Jquery used to do
+- Jquery seems unecessry as it adds unwanted bloat to the code
+- Jquery is still good for integrating plugins for quick simple actions that do some specific task
+- Two types of DOM selectors
+    -   Single Element Selector
+        Allows you to grab one elementby its ID or class name
+
+    -   Multiple Element Selector
+        Will grab all the elements using that class and return an HTML Collection
+
+
+*/
+
+//  Single Element Selector
+
+//  document.getelementbyID
+
+console.log(document.getElementById('task-title'));
+
+//  Get various properties from the element
+
+//  ID
+
+console.log(document.getElementById('task-title').id);
+
+//  Class
+
+console.log(document.getElementById('task-title').className);
+
+//  Change Style
+
+console.log(document.getElementById('task-title').style.color = 'Green');
+
+//  Change Content
+
+//  Text
+
+console.log(document.getElementById('task-title').textContent = 'Task List');
+
+console.log(document.getElementById('task-title').innerText = 'My Text');
+
+//  HTML
+
+console.log(document.getElementById('task-title').innerHTML = '<h1>Task List</h1>');
+
+//  It is recommended to use variables when changing content via JavaScript
+
+const taskTitle = document.getElementById('task-title');
+
+console.log(taskTitle.textContent = 'Task Title Variable');
+
+
+//  document.QuerySelector();
+
+//  ID
+
+console.log(document.querySelector('#task-title'));
+
+//  Class
+
+console.log(document.querySelector('.card-title'));
+
+//  Get Element Directly
+
+console.log(document.querySelector('h5')); //Only gets the first element from multiple same elements
+
+//  List
+
+console.log(document.querySelector('li').style.color = 'red');
+
+//  Nested Classes
+
+console.log(document.querySelector('ul li').style.color = 'blue');
+
+//  Using CSS Psuedo Classes
+
+console.log(document.querySelector('li:last-child').style.color = 'yellow');
+
+//  Changing 3rd Item in the list
+
+console.log(document.querySelector('li:nth-child(3)').style.color = 'brown');
+
+//  Changing Text Content
+
+console.log(document.querySelector('li:nth-child(4)').textContent = '4th Item');
+
+//  Odd / Even
+
+console.log(document.querySelector('li:nth-child(odd)').style.color = 'purple');
+console.log(document.querySelector('li:nth-child(even)').style.color = 'pink');
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  DOM Selectors for Multiple Elements
+
+
+/* 
+
+
 
 
 */
