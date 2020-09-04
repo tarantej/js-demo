@@ -1773,6 +1773,139 @@ qsaitems.forEach(function(li, index) {
 
 /* 
 
+- Navigate throughout the DOM
+- Look at properties attached to the DOM nodes
+- Aim to get children and parents of nodes
+
+*/
+
+let trav;
+
+const travlist = document.querySelector('ul.collection');
+const travListItem = document.querySelector('li.collection-item');
+
+trav = travlist;
+trav = travListItem;
+
+//  Get child nodes of the UL
+
+trav = travlist.childNodes; //  Output is a Node list of all the child nodes in the collection. There are also line breaks which are counted as text in the node list
+
+//  Get Children Element Nodes
+
+trav = travlist.children; // Outputs an HTML collection of the li children in the list. No line break nodes
+
+//  Single node
+
+// trav = travlist.childNodes[0]; //  Outputs selected Node
+
+//  Node name
+
+// trav = travlist.childNodes[0].nodeName; //  Outputs node name of the selected node
+
+//  Node Type
+
+// trav = travlist.childNodes[0].nodeType; //  Outputs Node Type. Each Number represents a Node Type
+
+/*
+
+    1 - Element
+    2 - Attribute (Deprecated)
+    3 - Text Node
+    8 - Comment
+    9 - Document itself
+    10 - Doctype
+
+- childNodes give us all types of nodes and not just elements. children give us only elements
+
+ */
+
+//  Get Specific Children Element Nodes
+
+trav = travlist.children[2];
+
+//  Change Text
+
+travlist.children[2].textContent = '2nd Child Element';
+
+//  Children of Children
+
+trav = travlist.children[2].children;
+
+//  firstChild
+
+trav = travlist.firstChild; //  Gives the first node
+
+//  firsElementChild
+
+trav = travlist.firstElementChild; //    Gives the first element node
+
+//  lastChild
+
+trav = travlist.lastChild; //  Gives the last node
+
+//  lastElementChild
+
+trav = travlist.lastElementChild; //    Gives the lasrt element node
+
+//  firstChild
+
+trav = travlist.firstChild; //  Gives the first node
+
+//  childElementCount
+
+trav = travlist.childElementCount; //    Counts the number of child elements
+
+
+
+//  Parent Nodes
+
+//  Get parent nodes of the UL
+
+trav = travListItem.parentNode; //  Output is a Node list of all the parent nodes in the collection. There are also line breaks which are counted as text in the node list
+
+//  Get Parent Element Nodes
+
+trav = travListItem.parentElement; // Same as Parent Node
+
+//  Parents of Parent
+
+trav = travListItem.parentElement.parentElement; //  Outputs <div class="card-action"> since the div comes before the selected UL parent node
+
+//  Siblings
+
+//  Get next sibling node
+
+trav = travListItem.nextSibling;
+
+//  Get next sibling element
+
+trav = travListItem.nextElementSibling;
+
+//  Get 3rd sibling element
+
+trav = travListItem.nextElementSibling.nextElementSibling;
+
+//  Get previous sibling node
+
+trav = travListItem.previousSibling;
+
+//  Get next sibling element
+
+trav = travListItem.previousElementSibling;
+
+
+
+console.log(trav);
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Creating the Elements
+
+
+/* 
+
 
 
 */
