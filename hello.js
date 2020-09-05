@@ -1597,7 +1597,7 @@ const taskTitle = document.getElementById('task-title');
 console.log(taskTitle.textContent = 'Task Title Variable');
 
 
-//  document.QuerySelector();
+// //  document.QuerySelector();
 
 //  ID
 
@@ -1627,14 +1627,14 @@ console.log(document.querySelector('li:last-child').style.color = 'yellow');
 
 console.log(document.querySelector('li:nth-child(3)').style.color = 'brown');
 
-//  Changing Text Content
+// //  Changing Text Content
 
-console.log(document.querySelector('li:nth-child(4)').textContent = '4th Item');
+// console.log(document.querySelector('li:nth-child(4)').textContent = '4th Item');
 
 //  Odd / Even
 
-console.log(document.querySelector('li:nth-child(odd)').style.color = 'purple');
-console.log(document.querySelector('li:nth-child(even)').style.color = 'pink');
+// console.log(document.querySelector('li:nth-child(odd)').style.color = 'purple');
+// console.log(document.querySelector('li:nth-child(even)').style.color = 'pink');
 
 
 /*--------------------------------------------------------------------------------------------------- */
@@ -1664,9 +1664,9 @@ console.log(items[0]);
 
 console.log(items[0].style.color = 'red');
 
-//  Change content
+// //  Change content
 
-console.log(items[3].textContent = '3rd Item');
+// console.log(items[3].textContent = '3rd Item');
 
 //  document.getElementsByClassName do not need to be used on aglobal scope
 
@@ -1676,7 +1676,7 @@ const listItems = document.querySelector('ul').getElementsByClassName('collectio
 
 console.log(listItems); //   Added a DIV with class of collection-item. The Output shows the DIV as thepart of the collection / node list. Can be attached to single elements
 
-//  document.getElementsByTagName
+// //  document.getElementsByTagName
 
 let tagitems = document.getElementsByTagName('li');
 
@@ -1690,9 +1690,9 @@ console.log(tagitems[0]);
 
 console.log(tagitems[0].style.color = 'red');
 
-//  Change content
+// //  Change content
 
-console.log(tagitems[3].textContent = '3rd Item');
+// console.log(tagitems[3].textContent = '3rd Item');
 
 //  Convert HTMLCollection to Array
 
@@ -1712,13 +1712,13 @@ tagitems.forEach(function(li, index) {
 
     console.log(li.className);
 
-    //  Change Text Content
+    //     //  Change Text Content
 
-    console.log(li.textContent = 'Hello');
+    //     console.log(li.textContent = 'Hello');
 
-    //  Passing index and Template iterals
+    //     //  Passing index and Template iterals
 
-    console.log(li.textContent = `${index}:Hello`);
+    //     console.log(li.textContent = `${index}:Hello`);
 
 })
 
@@ -1733,24 +1733,24 @@ tagitems.forEach(function(li, index) {
 
 const qsaitems = document.querySelectorAll('ul.collection li.collection-item');
 
-console.log(qsaitems);
+// console.log(qsaitems);
 
-//  forEach
+// //  forEach
 
 qsaitems.forEach(function(li, index) {
-    console.log(li);
+    //     console.log(li);
 
-    //  Output class names
+    //     //  Output class names
 
-    console.log(li.className);
+    //     console.log(li.className);
 
-    //  Change Text Content
+    //     //  Change Text Content
 
-    console.log(li.textContent = 'Hello');
+    //     console.log(li.textContent = 'Hello');
 
-    //  Passing index and Template iterals
+    //     //  Passing index and Template iterals
 
-    console.log(li.textContent = `${index}:Hello`);
+    //     console.log(li.textContent = `${index}:Hello`);
 
     //  Odd / Even
 
@@ -1761,10 +1761,16 @@ qsaitems.forEach(function(li, index) {
         li.style.background = '#ccc';
     });
 
+    liEven.forEach(function(li, index) {
+        li.style.background = 'aqua';
+    });
+
     // console.log(document.querySelectorAll('li:nth-child(odd)').style.background = '#ccc');
-    // console.log(document.querySelectorAll('li:nth-child(even)').style.background = 'aqua');
+    // console.log(document.querySelectorAll('li:nth-child(even)').style.background = '#fff');
 
 })
+
+
 
 /*--------------------------------------------------------------------------------------------------- */
 
@@ -1826,7 +1832,7 @@ trav = travlist.children[2];
 
 //  Change Text
 
-travlist.children[2].textContent = '2nd Child Element';
+// travlist.children[2].textContent = '2nd Child Element';
 
 //  Children of Children
 
@@ -1902,6 +1908,59 @@ console.log(trav);
 /*--------------------------------------------------------------------------------------------------- */
 
 //  Creating the Elements
+
+
+/* 
+
+
+
+*/
+
+
+//  Add a new list item element
+
+const ele = document.createElement('li');
+
+//  Add class
+
+ele.className = 'collection-item';
+
+//  Add ID
+
+ele.id = 'new-id';
+
+//  Add Attribute
+
+ele.setAttribute('title', 'New Item');
+
+//  Create and append Text Node
+
+ele.appendChild(document.createTextNode('New List item')); // appendChild lets you add content inside the element
+
+//  Append newly created item to the existing list
+
+document.querySelector('ul.collection').appendChild(ele);
+
+//  Create new link element
+
+const elelink = document.createElement('a');
+
+//  Add Link Class
+elelink.className = 'delete-item secondary-content';
+
+//  Add icon
+
+elelink.innerHTML = '<i class="fa fa-remove"></i>';
+
+//  Append link to New li
+
+ele.appendChild(elelink);
+
+console.log(ele);
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Removing and Replacing Elements
 
 
 /* 
