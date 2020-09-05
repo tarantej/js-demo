@@ -1965,6 +1965,111 @@ console.log(ele);
 
 /* 
 
+- How to replace elements in the DOM
+- How to remove elements
+- How to work with classes
+- How to manupilate classes and attributes
+
+
+*/
+
+//  Replacing Elements
+
+//  Create new element
+
+const newHeading = document.createElement('h2');
+
+//  Add ID
+
+newHeading.id = 'task-title';
+
+//  New Text node
+
+newHeading.appendChild(document.createTextNode('New Task List'));
+
+//  Get the old heading
+
+const oldHeading = document.getElementById('task-title');
+
+//  replaceChild method requires having a parent element. In this case the parent element is the div with class "class-action"
+
+const cardAction = document.querySelector('.card-action');
+
+//  Replace heading
+
+cardAction.replaceChild(newHeading, oldHeading);
+
+//  Remove Elements
+
+const remlis = document.querySelectorAll('li');
+const newList = document.querySelector('ul');
+
+//  Remove list items
+
+remlis[5].remove(); //  Removed the last list item which was newly created last time
+
+//Remove Child element
+
+newList.removeChild(remlis[4]);
+
+//  Classes and Attributes
+
+const firstli = document.querySelector('li:last-child');
+
+const firstlink = firstli.children[0];
+
+let vlink;
+
+//  Class names list
+
+vlink = firstlink.className;
+
+//  Class names list in DOM tokenlist which displays like an array
+
+vlink = firstlink.classList;
+
+//  Access single item in DOM Token List
+
+vlink = firstlink.classList[0];
+
+//  Add a class using classList
+
+vlink = firstlink.classList.add('new-class');
+
+//  Remove a class using classList
+
+vlink = firstlink.classList.remove('new-class');
+
+vlink = firstlink;
+
+console.log(vlink);
+
+//  Attributes
+
+//  Get Attributes
+
+vlink = firstlink.getAttribute('href');
+
+//  Set Attributes
+
+vlink = firstlink.setAttribute('href', 'https://www.google.com');
+
+//  Check for Attributes
+
+vlink = firstlink.hasAttribute('href');
+
+//  Remove Attributes
+
+vlink = firstlink.removeAttribute('href');
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Event Listeners and the Event Object
+
+
+/* 
+
 
 
 */
