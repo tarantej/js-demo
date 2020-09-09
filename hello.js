@@ -2070,6 +2070,84 @@ vlink = firstlink.removeAttribute('href');
 
 /* 
 
+ -   Takes in two inputs: an event type (for example click) and a function which shows the desired output for the event
+
+ -  Some events have default behavious(mouse click to select, link redirects etc.) 
+ -  To stop the event listner from performing its default behaviour we add a parameter to the addEventListener function
+
+
+*/
+
+//  Select the clear tasks button
+
+document.querySelector('.clear-tasks').addEventListener('click', function(e) {
+    console.log('Clicked')
+        //  Prevent Default behaviour
+
+    e.preventDefault();
+});
+
+//  Named function
+
+// document.querySelector('.clear-tasks').addEventListener('click', onClick);
+
+// function onClick(e) {
+//     console.log('Clicked in a named function');
+//     e.preventDefault();
+// }
+
+//  Event Objects
+
+
+
+
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
+
+function onClick(e) {
+    let eo;
+    eo = e;
+
+    //  Event Target element
+
+    eo = e.target;
+
+    //  Event target element attributes
+
+    // eo = e.target.id;
+    // eo = e.className;
+    // eo = e.classList;
+
+    // //  Event Type
+
+    // eo = e.type
+
+    // //  Timestamp
+
+    // eo = e.timeStamp;
+
+    // //  Event coordinates relative to the window
+
+    // eo = e.clientX;
+    // eo = e.clientY;
+
+    // //  Event coordinates relative to the element
+
+    // eo = e.offSetX;
+    // eo = e.offSetY;
+
+
+    console.log(eo);
+    e.preventDefault();
+}
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Mouse Events
+
+
+/* 
+
+ 
 
 
 */
