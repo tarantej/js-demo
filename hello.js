@@ -2151,3 +2151,61 @@ function onClick(e) {
 
 
 */
+
+//  Set Event on clear tasks button
+
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
+
+//  Create an Event Handler
+
+function runEvent(e) {
+    console.log(`Event Type: ${e.type}`);
+
+    //  Display Mouse Move Coordinates
+
+    heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+    //  Change background color
+
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 60)`;
+}
+
+//  Click
+
+clearBtn.addEventListener('click', runEvent);
+
+//  Double Click
+
+clearBtn.addEventListener('dblclick', runEvent);
+
+//  Mouse Down - Click and hold mouse button
+
+clearBtn.addEventListener('mousedown', runEvent);
+
+//  Mouse Up - Click and hold, then let go mouse button
+
+clearBtn.addEventListener('mouseup', runEvent);
+
+//  Mouse Enter on card list
+
+card.addEventListener('mouseenter', runEvent);
+
+//  Mouse Leave on card list
+
+card.addEventListener('mouseleave', runEvent);
+
+//  Mouse Over
+
+clearBtn.addEventListener('mouseover', runEvent);
+
+//  Mouse Out
+
+clearBtn.addEventListener('mouseout', runEvent);
+
+//  Mouse over and Mouse out only fire when you are going over another elementin the specified element
+
+//  Mouse Move - Movement inside the element
+
+card.addEventListener('mousemove', runEvent);
