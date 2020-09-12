@@ -2158,6 +2158,7 @@ const clearBtn = document.querySelector('.clear-tasks');
 const card = document.querySelector('.card');
 const heading = document.querySelector('h5');
 
+
 //  Create an Event Handler
 
 function runEvent(e) {
@@ -2172,40 +2173,196 @@ function runEvent(e) {
     document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 60)`;
 }
 
-//  Click
+// //  Click
 
-clearBtn.addEventListener('click', runEvent);
+// clearBtn.addEventListener('click', runEvent);
 
-//  Double Click
+// //  Double Click
 
-clearBtn.addEventListener('dblclick', runEvent);
+// clearBtn.addEventListener('dblclick', runEvent);
 
-//  Mouse Down - Click and hold mouse button
+// //  Mouse Down - Click and hold mouse button
 
-clearBtn.addEventListener('mousedown', runEvent);
+// clearBtn.addEventListener('mousedown', runEvent);
 
-//  Mouse Up - Click and hold, then let go mouse button
+// //  Mouse Up - Click and hold, then let go mouse button
 
-clearBtn.addEventListener('mouseup', runEvent);
+// clearBtn.addEventListener('mouseup', runEvent);
 
-//  Mouse Enter on card list
+// //  Mouse Enter on card list
 
-card.addEventListener('mouseenter', runEvent);
+// card.addEventListener('mouseenter', runEvent);
 
-//  Mouse Leave on card list
+// //  Mouse Leave on card list
 
-card.addEventListener('mouseleave', runEvent);
+// card.addEventListener('mouseleave', runEvent);
 
-//  Mouse Over
+// //  Mouse Over
 
-clearBtn.addEventListener('mouseover', runEvent);
+// clearBtn.addEventListener('mouseover', runEvent);
 
-//  Mouse Out
+// //  Mouse Out
 
-clearBtn.addEventListener('mouseout', runEvent);
+// clearBtn.addEventListener('mouseout', runEvent);
 
-//  Mouse over and Mouse out only fire when you are going over another elementin the specified element
+// //  Mouse over and Mouse out only fire when you are going over another elementin the specified element
 
-//  Mouse Move - Movement inside the element
+// //  Mouse Move - Movement inside the element
 
-card.addEventListener('mousemove', runEvent);
+// card.addEventListener('mousemove', runEvent);
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Keyboard and Input Events
+
+
+/* 
+
+    //  Capture submit event
+
+// form.addEventListener('submit', formEvent);
+
+//  Clear the input value
+
+taskInput.value = "";
+
+//  Events on the input instead of the form
+
+//  Keydown - When key is pressed
+
+//  Target - the element on which the event happens
+
+// taskInput.addEventListener('keydown', formEvent);
+ 
+ //  Keyup - Key released after press
+
+// taskInput.addEventListener('keyup', formEvent);
+
+//  Keypress - Key pressed
+
+// taskInput.addEventListener('keypress', formEvent);
+
+//  Focus - click inside input and set focus on element
+
+// taskInput.addEventListener('focus', formEvent);
+
+//  Blurr - Clicked outside of input
+
+// taskInput.addEventListener('blur', formEvent);
+
+//  Cut - cut input
+
+// taskInput.addEventListener('cut', formEvent);
+
+//  Paste - paste content from clipboard
+
+// taskInput.addEventListener('paste', formEvent);
+
+//  Input - Any input event
+
+// taskInput.addEventListener('input', formEvent);
+
+//  Change - Works on select input (In case of materialize, jquery needs to be added in order to see the select input. Disable Materialize temporarily to see it work)
+
+// select.addEventListener('select', formEvent);
+
+
+*/
+
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+const select = document.querySelector('select');
+
+//  Capture submit event
+
+// form.addEventListener('submit', formEvent);
+
+//  Clear the input value
+
+taskInput.value = "";
+
+//  Events on the input instead of the form
+
+//  Keydown - When key is pressed
+
+//  Target - the element on which the event happens
+
+// taskInput.addEventListener('keydown', formEvent);
+
+// function formEvent(e) {
+
+//     //  Get input value
+
+//     // console.log(taskInput.value);
+
+//     console.log(`Event Type: ${e.type}`);
+
+//     //  Get Target input value on keydown
+
+//     // console.log(e.target.value);
+
+//     //  Change inner Text in another element via input value
+
+//     // heading.innerText = e.target.value;
+
+//     // e.preventDefault();
+
+// }
+
+
+//  Keyup - Key released after press
+
+// taskInput.addEventListener('keyup', formEvent);
+
+//  Keypress - Key pressed
+
+// taskInput.addEventListener('keypress', formEvent);
+
+//  Focus - click inside input and set focus on element
+
+// taskInput.addEventListener('focus', formEvent);
+
+//  Blurr - Clicked outside of input
+
+// taskInput.addEventListener('blur', formEvent);
+
+//  Cut - cut input
+
+// taskInput.addEventListener('cut', formEvent);
+
+//  Paste - paste content from clipboard
+
+// taskInput.addEventListener('paste', formEvent);
+
+// function formEvent(e) {
+
+//     //  Get input value
+
+//     // console.log(taskInput.value);
+
+//     console.log(`Event Type: ${e.type}`);
+
+//     //  Get Target input value on keyup
+
+//     console.log(e.target.value);
+
+//     //  Change inner Text in another element via input value
+
+//     // heading.innerText = e.target.value;
+
+//     // e.preventDefault();
+
+// }
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Event Bubbling and Delegation
+
+
+/* 
+
+ 
+
+
+*/
