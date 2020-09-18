@@ -2362,7 +2362,105 @@ taskInput.value = "";
 
 /* 
 
- 
+  - Event bubbling is the bubbling up of events through the DOM
+  - When a particular event occurs on an element it will ubble up to its parent
+  - Event delegation is opposite of Event bubbling
+  - We put a listener in one of the parent elements and use logic n the target element we want to work on
+
+
+*/
+
+//  Event Bubbling
+
+
+//  Col (Ancestor)
+
+// document.querySelector('.col').addEventListener('click', function() {
+//     console.log('col');
+// });
+
+
+// //  Card (Grand Parent)
+
+// document.querySelector('.card').addEventListener('click', function() {
+//     console.log('card');
+// });
+
+
+// //  Card Content (Parent)
+
+// document.querySelector('.card-content').addEventListener('click', function() {
+//     console.log('card content');
+// });
+
+
+// //  Card Title (Child)
+
+// document.querySelector('.card-title').addEventListener('click', function() {
+//     console.log('card title');
+// });
+
+//  Even if you only interact with the child element (clicking on card title class element), the event still fires andall the parent elements of the child show their output
+
+//  Event Delegation - Putting event listner on parent and showing output till the child element
+//  Also used when data is dynamically inserted via javaScript
+
+
+//  Without Event Delegation
+
+// const del = document.querySelector('.delete-item');
+
+// del.addEventListener('click', delItem);
+
+// function delItem() {
+//     console.log('delete item'); //   Only the first delete-item element works, but not the rest
+// }
+
+
+//  With Event Delegation
+
+document.body.addEventListener('click', delItem);
+
+function delItem(e) {
+    // console.log(e.target);
+
+    //   Need to do conditional statements in order to get the correct output
+
+    //  Targeting the icon class
+
+    // if (e.target.className === 'fa fa-remove') {
+    //     console.log('delete item'); //   outputs when we click on the icon
+    // }
+
+    //  Targetting the parent element
+
+    // if (e.target.parentElement.className === 'delete-item secondary-content')
+
+    //    Just adding delete item will not work since className takes the input of the classes n the whole string. However, this method becomes problematic if we add a new class to the list item as the className pattern will not be recongnized
+
+    //   A better option is to use a class list instead to check if the specific class is part of that list
+
+    // if (e.target.parentElement.classList.contains('delete-item')) {
+    //     console.log('delete item'); //   outputs when we click on the icon
+    // }
+
+    //  Targetting the parent of a tag in order to delete the item
+
+    if (e.target.parentElement.classList.contains('delete-item')) {
+        console.log('delete item'); //   outputs when we click on the icon
+        e.target.parentElement.parentElement.remove(); //   removes the item till the page is reloaded
+    }
+
+}
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Local and Session Storage
+
+
+/* 
+
+  
 
 
 */
