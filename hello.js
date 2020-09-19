@@ -2460,7 +2460,110 @@ function delItem(e) {
 
 /* 
 
-  
+- Local Storage API is part of window object
+- Setting key value pairs
+- Set value must be a string
+- Objects of other types can be set as well but they must be converted to string via JSON.stringify() and output as JSON via JSON.parse()
+
+- Difference between local and session storage
+
+- Local storage must be cleared out manually when deleting cookies; Session storage stays untill the browser is closed
+
+- Firefox: Developer Tools > Storage
+
+*/
+
+//  Set local storage item
+
+localStorage.setItem('name', 'John');
+
+//  Set session storage
+
+sessionStorage.setItem('name', 'Beth');
+
+//  If we comment both the set items,the local storage item stays even when thebrowser has been closed while the session storage item disappears once we close the browser
+
+//  Remove from local storage
+
+// localStorage.removeItem('name');
+
+//  Get local storage item
+
+const locname = localStorage.getItem('name');
+
+console.log(locname);
+
+//  Remove all local storage items
+
+// localStorage.clear(); //    Sets the value to null
+
+//  Create submit event
+
+document.querySelector('form').addEventListener('submit', function(e) {
+    const task = document.getElementById('task').value;
+
+    //  Set item to local storage
+
+    // localStorage.setItem('Task', task);
+
+    //  New task overwrites the previous task
+
+    //  Create an array of tasks and store as string
+
+    let taskarr;
+
+    //  Check if a task exists n the local storage. If yes, then add to the array. If no, then create an empty array
+
+    if (localStorage.getItem('taskarr') === null) {
+
+        //  Create a new empty array
+
+        taskarr = [];
+
+
+    } else {
+        //  Get existing task item and convert to JSON String
+
+        taskarr = JSON.parse(localStorage.getItem('taskarr'));
+
+    }
+
+    //  add task item to the array
+
+    taskarr.push(task);
+
+    //  Set item to localStorage in JSON string
+
+    localStorage.setItem('tasks', JSON.stringify(taskarr));
+
+    //  String Values are formatted as an array and stored in localStorage
+
+    // console.log(taskarr);
+
+    e.preventDefault();
+});
+
+const tsklist = JSON.parse(localStorage.getItem('taskarr'));
+
+tsklist.forEach(function(task) {
+    console.log(task) // Outputs all the tasks from he Task Array (taskarr) previously created
+});
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  DOM Projects
+
+/*--------------------------------------------------------------------------------------------------- */
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Project 1 : Task List
+
+/*--------------------------------------------------------------------------------------------------- */
+
+/* 
+
+
 
 
 */
