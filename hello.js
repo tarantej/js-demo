@@ -2563,6 +2563,7 @@ tsklist.forEach(function(task) {
 
 /* 
 
+Part 1: Add UI and Task Items - Made a mistake. Did not realize the submit button was outside of the form and that is why it was not submitting. The submit button should always be inside the form
 
 
 
