@@ -33,41 +33,41 @@ function loadEventListeners() {
 
         console.log(taskInput);
 
-        //         //  Create List Item
+        //  Create List Item
 
-        //         const listItem = document.createElement('li');
+        const listItem = document.createElement('li');
 
-        //         //  Add Collection Item class to newly created list item
+        //  Add Collection Item class to newly created list item
 
-        //         listItem.className = 'collection-item';
+        listItem.className = 'collection-item';
 
-        //         //  Create Text Node and append to listItem
+        //  Create Text Node and append to listItem
 
-        //         listItem.appendChild(document.createTextNode(taskInput.value));
+        listItem.appendChild(document.createTextNode(taskInput.value));
 
-        //         //  Create new link element
+        //  Create new link element
 
-        //         const link = document.createElement('a');
+        const link = document.createElement('a');
 
-        //         //  Add Link class
+        //  Add Link class
 
-        //         link.className = 'delete-item secondary-content red';
+        link.className = 'delete-item secondary-content';
 
-        //         //  Add link html
+        //  Add link html
 
-        //         link.innerHTML = "<i class='material-icons'>remove_circle</i>"
+        link.innerHTML = "<i class='fa fa-minus-circle'></i>"
 
-        //         //  Append Link to listItem
+        //  Append Link to listItem
 
-        //         listItem.appendChild(link);
+        listItem.appendChild(link);
 
-        //         //  Append listItem to List
+        //  Append listItem to List
 
-        //         taskList.appendChild(listItem);
+        taskList.appendChild(listItem);
 
-        //         //  Clear Input
+        //  Clear Input
 
-        //         taskInput.value = '';
+        taskInput.value = '';
 
 
         e.preventDefault();
