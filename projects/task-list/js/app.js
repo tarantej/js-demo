@@ -1,10 +1,3 @@
-/*--------------------------------------------------------------------------------------------------- */
-
-//  UI & Add Task Items
-
-/*--------------------------------------------------------------------------------------------------- */
-
-
 //  Define UI Variables
 
 const form = document.querySelector('#task-form');
@@ -23,6 +16,18 @@ function loadEventListeners() {
     //  Add task Event
     form.addEventListener('submit', addTask);
 
+    //  Remove Task Event
+
+    taskList.addEventListener('click', removeTask);
+
+    //  Clear All Tasks
+
+    clearBtn.addEventListener('click', clearTasks);
+
+    //  Filter Tasks
+
+    filter.addEventListener('keyup', filterTasks)
+
     //  Add Task
 
     function addTask(e) {
@@ -33,7 +38,7 @@ function loadEventListeners() {
             alert('Task Input cannot be blank');
         }
 
-        console.log(taskInput);
+        // console.log(taskInput);
 
         //  Create List Item
 
@@ -57,7 +62,7 @@ function loadEventListeners() {
 
         //  Add link html
 
-        link.innerHTML = "<i class='fa fa-minus-circle'></i>"
+        link.innerHTML = "<i class='fa fa-remove'></i>"
 
         //  Append Link to listItem
 
@@ -74,11 +79,61 @@ function loadEventListeners() {
 
         e.preventDefault();
     }
+
+    //  Remove Task
+
+    function removeTask(e) {
+
+        //  Target remove icon on task
+
+        if (e.target.parentElement.classList.contains('delete-item')) {
+            if (confirm('Are you sure ?')) {
+                e.target.parentElement.parentElement.remove();
+            }
+
+        }
+
+
+
+        // e.preventDefault();
+    }
+
+    //  Clear tasks on click of button
+
+    function clearTasks(e) {
+        //  Option 1
+
+        taskList.innerHTML = '';
+
+        //  Option 2
+
+        //  Research: InnerHTML vs Removechild
+
+        while (taskList.firstChild) { //   Loop till there are no elements in the list
+            taskList.removeChild(taskList.firstChild);
+        }
+
+    }
+
+    //  Filter Tasks
+
+    function filterTasks(e) {
+        //  Catch what is being typed in
+
+        const text = e.target.value;
+
+        // console.log(text);
+
+        //     //  Get all list items
+
+        document.querySelectorAll('.collection-item').forEach(function(task) {
+            const item = task.firstChild.textContent.toLowerCase();
+            if (item.toLowerCase().indexOf(text) != -1) { //   If the index value is empty, then the value is -1
+                task.style.display = 'block';
+            } else {
+                task.style.display = 'none';
+            }
+        });
+    }
+
 }
-
-
-/*--------------------------------------------------------------------------------------------------- */
-
-//  Delete & Filter Tasks
-
-/*--------------------------------------------------------------------------------------------------- */
