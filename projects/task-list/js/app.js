@@ -124,11 +124,12 @@ function loadEventListeners() {
 
         // console.log(text);
 
-        //     //  Get all list items
+        //  Get all list items
 
         document.querySelectorAll('.collection-item').forEach(function(task) {
             const item = task.firstChild.textContent.toLowerCase();
-            if (item.toLowerCase().indexOf(text) != -1) { //   If the index value is empty, then the value is -1
+            if (item.toLowerCase().indexOf(text) != -1) {
+                //   If the index value is empty, then the value is -1
                 task.style.display = 'block';
             } else {
                 task.style.display = 'none';
