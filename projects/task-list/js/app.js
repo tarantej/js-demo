@@ -13,7 +13,9 @@ const taskInput = document.querySelector('#task');
 loadEventListeners();
 
 function loadEventListeners() {
-    //  Add task Event
+    //  DOM Load Event
+    document.addEventListener('DOMContentLoaded', getTasks)
+        //  Add task Event
     form.addEventListener('submit', addTask);
 
     //  Remove Task Event
@@ -72,12 +74,50 @@ function loadEventListeners() {
 
         taskList.appendChild(listItem);
 
+        //  Store in Local Storage
+        taskStore(taskInput.value);
+
         //  Clear Input
 
         taskInput.value = '';
 
 
         e.preventDefault();
+    }
+
+
+
+    function taskStore(task) {
+        //  Set variable for getting an array of tasks
+        let Tasks;
+
+        //  if localstorage is empty, create a new array else print the list in JSON
+        if (localStorage.getItem('Tasks') === null) {
+            Tasks = [];
+        } else {
+            Tasks = JSON.parse(localStorage.getItem('Tasks'));
+        }
+        //  Push the values to the array
+        Tasks.push(task);
+
+        //  Set Items in localstorage
+        localStorage.setItem('task', JSON.stringify(Tasks))
+    }
+
+    //  Tasks not staying in local storage, need to check
+
+    //  Get Tasks from localstorage
+
+    function getTasks() {
+        //  Set variable for getting an array of tasks
+        let Tasks;
+
+        //  if localstorage is empty, create a new array else print the list in JSON
+        if (localStorage.getItem('Tasks') === null) {
+            Tasks = [];
+        } else {
+            Tasks = JSON.parse(localStorage.getItem('Tasks'));
+        }
     }
 
     //  Remove Task

@@ -2567,6 +2567,54 @@ Part 1: Add UI and Task Items - Made a mistake. Did not realize the submit butto
 
 Part 2: Delete and Filter Tasks - Watch out for where the event listeners are being called from. Calling the event listener from the wrong element will give no results
 
+Part 3: Tasks not being loaded from localstorage, need to check
 
 
 */
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Project 2 : Loan Calculator
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
+
+/*
+
+
+
+
+
+ */
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Project 3 : Number Guesser
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
+/*
+
+
+
+
+
+ */
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Object Oriented JavaScript - ES5 & ES2015
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
+/*
+
+
+
+
+ */
