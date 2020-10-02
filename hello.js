@@ -2569,6 +2569,14 @@ Part 2: Delete and Filter Tasks - Watch out for where the event listeners are be
 
 Part 3: Tasks not being loaded from localstorage, need to check
 
+- Turns out the new array values were replacing the existing data. So needed to ensure that the new values were appended to the existing array values instead of replacing them
+
+- This helped in creating an array collection of values (tasks), which was otherwise not being created following the tutorial
+
+- With the successful creation of array list, the persistance of local storage was evident and paved the way for the next operation(removing items from local storage)
+
+//  Deleting Individual items from local storage not working
+
 
 */
 
