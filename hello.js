@@ -2619,10 +2619,66 @@ Part 3: Tasks not being loaded from localstorage, need to check
 
 /*--------------------------------------------------------------------------------------------------- */
 
+//  Constructor and "this"keyword
 
-/*
 
+/* 
+
+ - Object Literals are fine for one time declaration but not for multiple instances
+ - For multiple instances, constructors are used
+ - Constructor names always start with capital
+ - We can create as many constructor objects as we want
+ - This refers to the current instance of the object
+ - A Method is a function inside of an object
 
 
 
  */
+
+// Object Literal example
+
+const any = {
+    name: 'Taran',
+    age: 30,
+
+}
+
+
+
+console.log(any);
+
+
+//  Constructor
+
+function Person(name, dob) {
+
+    //  Instantiate Person object 
+    this.name = name; //    Dynamically allocate value to "name" key
+
+    //  Instantiate object by passing date of birth
+
+    this.birthday = new Date(dob);
+
+    //  Calculate age
+
+    this.calcAge = function() {
+        const diff = Date.now() - this.birthday.getTime();
+
+        //  New age from the calculated difference
+
+        const ageDate = new Date(diff);
+
+        //  Return age as an absolute number
+
+        return Math.abs(ageDate.getUTCFullYear() - 1990);
+    }
+
+    const taran = new Person('Taran', '08/08/1990');
+    // const tej = new Person('Tej');
+
+    // //  Using "this" in a global scope (not inside a function) gives a window object
+
+    console.log(taran.calcAge());
+
+    // console.log(this);
+}
