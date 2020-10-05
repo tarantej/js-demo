@@ -2580,22 +2580,6 @@ Part 3: Tasks not being loaded from localstorage, need to check
 
 */
 
-/*--------------------------------------------------------------------------------------------------- */
-
-//  Project 2 : Loan Calculator
-
-/*--------------------------------------------------------------------------------------------------- */
-
-
-
-/*
-
-
-
-
-
- */
-
 
 /*--------------------------------------------------------------------------------------------------- */
 
@@ -2630,6 +2614,7 @@ Part 3: Tasks not being loaded from localstorage, need to check
  - We can create as many constructor objects as we want
  - This refers to the current instance of the object
  - A Method is a function inside of an object
+ - Date bject is one of the in built constructors ready for use
 
 
 
@@ -2676,9 +2661,159 @@ function Person(name, dob) {
     const taran = new Person('Taran', '08/08/1990');
     // const tej = new Person('Tej');
 
-    // //  Using "this" in a global scope (not inside a function) gives a window object
+    // Using "this" in a global scope (not inside a function) gives a window object
 
     console.log(taran.calcAge());
 
     // console.log(this);
 }
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Built in Constructor
+
+/* 
+
+ - Other than date, there are more types of constructors available in Javascript, but the are not recommended to be used
+ - Primitive data types can be used as constructors, but it creates more problems than solutions. 
+ - Unecessary, confusing, increases code block size, issues with comparision operators
+
+ */
+
+// Strings
+
+const strName = 'Taran'; // Set primitive value to the variable
+
+//  String as an object
+
+const strName2 = new String('Taran');
+
+//  Object properties
+
+strName2foo = 'barr'; // Added a property/key called foo with value barr
+
+//console.log(strName2);
+
+//  Type comparison
+
+// console.log(typeof strName); //  String
+
+// console.log(typeof strName2); //  Object
+
+if (strName === 'Taran') {
+    console.log('String');
+} else {
+    console.log('Object');
+}
+
+//  Value and Type match as String
+
+
+if (strName2 === 'Taran') {
+    console.log('String');
+} else {
+    console.log('Object');
+}
+
+//  Value matched but not the data type
+
+
+//  Numbers
+
+const primNum1 = 5; //  Primitive Number
+const objNum2 = new Number(6); // Number object
+
+console.log(typeof primNum1);
+
+console.log(typeof objNum2);
+
+//  Boolean
+
+const bool1 = true; //   Primitive Boolean
+const bool2 = new Boolean(true); //  Boolean object type
+
+console.log(bool1);
+
+console.log(bool2);
+
+//  Functions
+
+//  Primitive function
+
+const getSum1 = function(x, y) {
+    return x + y;
+}
+
+//  Function object
+
+//  The last argument is the output you would like to show
+
+const getSum2 = new Function('x', 'y', 'return 1+1');
+
+console.log(getSum1(1, 1));
+
+console.log(getSum2());
+
+//  Objects
+
+const constantine = { name: 'John' };
+
+console.log(constantine);
+
+const johnW = new Object({ name: 'J Constantine' });
+
+console.log(johnW);
+
+//  Arrays
+
+const Arr1 = [1, 2, 3, 4, 5];
+
+const Arr2 = new Array([6, 7, 8, 9, 0]);
+
+console.log(Arr1);
+
+console.log(Arr2);
+
+//  Regular expressions
+
+const regEx1 = /\w+/; //Regular expression that searches for a word more than once
+
+const regEx2 = new RegExp('\\w+');
+
+console.log(regEx1); //  Prints the expression as expected
+console.log(regEx2); // Forward slash (/) missing if not escaped
+
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Project 2 : Loan Calculator
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
+
+/*
+
+
+
+
+
+ */
+
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Prototypes
+
+
+/* 
+
+
+
+ */
+
+
+
+/*--------------------------------------------------------------------------------------------------- */
