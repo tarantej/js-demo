@@ -2581,20 +2581,7 @@ Part 3: Tasks not being loaded from localstorage, need to check
 */
 
 
-/*--------------------------------------------------------------------------------------------------- */
 
-//  Project 3 : Number Guesser
-
-/*--------------------------------------------------------------------------------------------------- */
-
-
-/*
-
-
-
-
-
- */
 
 
 /*--------------------------------------------------------------------------------------------------- */
@@ -2622,15 +2609,15 @@ Part 3: Tasks not being loaded from localstorage, need to check
 
 // Object Literal example
 
-const any = {
-    name: 'Taran',
-    age: 30,
+// const any = {
+//     name: 'Taran',
+//     age: 30,
 
-}
+// }
 
 
 
-console.log(any);
+// console.log(any);
 
 
 //  Constructor
@@ -2658,15 +2645,28 @@ function Person(name, dob) {
         return Math.abs(ageDate.getUTCFullYear() - 1990);
     }
 
-    const taran = new Person('Taran', '08/08/1990');
+    const taran = new Person("Taran", "8/8/1990");
     // const tej = new Person('Tej');
 
     // Using "this" in a global scope (not inside a function) gives a window object
 
-    console.log(taran.calcAge());
+    // console.log(taran.calcAge());
 
     // console.log(this);
 }
+
+// function Book(name, year) {
+//     this.name = name;
+//     this.year = '(' + year + ')';
+// }
+
+// var firstBook = new Book("Pro AngularJS", 2014);
+// var secondBook = new Book("Secrets Of The JavaScript Ninja", 2013);
+// var thirdBook = new Book("JavaScript Patterns", 2010);
+
+// console.log(firstBook.name, firstBook.year);
+// console.log(secondBook.name, secondBook.year);
+// console.log(thirdBook.name, thirdBook.year);
 
 /*--------------------------------------------------------------------------------------------------- */
 
@@ -2680,108 +2680,108 @@ function Person(name, dob) {
 
  */
 
-// Strings
+// // Strings
 
-const strName = 'Taran'; // Set primitive value to the variable
+// const strName = 'Taran'; // Set primitive value to the variable
 
-//  String as an object
+// //  String as an object
 
-const strName2 = new String('Taran');
+// const strName2 = new String('Taran');
 
-//  Object properties
+// //  Object properties
 
-strName2foo = 'barr'; // Added a property/key called foo with value barr
+// strName2foo = 'barr'; // Added a property/key called foo with value barr
 
-//console.log(strName2);
+// //console.log(strName2);
 
-//  Type comparison
+// //  Type comparison
 
-// console.log(typeof strName); //  String
+// // console.log(typeof strName); //  String
 
-// console.log(typeof strName2); //  Object
+// // console.log(typeof strName2); //  Object
 
-if (strName === 'Taran') {
-    console.log('String');
-} else {
-    console.log('Object');
-}
+// if (strName === 'Taran') {
+//     console.log('String');
+// } else {
+//     console.log('Object');
+// }
 
-//  Value and Type match as String
-
-
-if (strName2 === 'Taran') {
-    console.log('String');
-} else {
-    console.log('Object');
-}
-
-//  Value matched but not the data type
+// //  Value and Type match as String
 
 
-//  Numbers
+// if (strName2 === 'Taran') {
+//     console.log('String');
+// } else {
+//     console.log('Object');
+// }
 
-const primNum1 = 5; //  Primitive Number
-const objNum2 = new Number(6); // Number object
+// //  Value matched but not the data type
 
-console.log(typeof primNum1);
 
-console.log(typeof objNum2);
+// //  Numbers
 
-//  Boolean
+// const primNum1 = 5; //  Primitive Number
+// const objNum2 = new Number(6); // Number object
 
-const bool1 = true; //   Primitive Boolean
-const bool2 = new Boolean(true); //  Boolean object type
+// console.log(typeof primNum1);
 
-console.log(bool1);
+// console.log(typeof objNum2);
 
-console.log(bool2);
+// //  Boolean
 
-//  Functions
+// const bool1 = true; //   Primitive Boolean
+// const bool2 = new Boolean(true); //  Boolean object type
 
-//  Primitive function
+// console.log(bool1);
 
-const getSum1 = function(x, y) {
-    return x + y;
-}
+// console.log(bool2);
 
-//  Function object
+// //  Functions
 
-//  The last argument is the output you would like to show
+// //  Primitive function
 
-const getSum2 = new Function('x', 'y', 'return 1+1');
+// const getSum1 = function(x, y) {
+//     return x + y;
+// }
 
-console.log(getSum1(1, 1));
+// //  Function object
 
-console.log(getSum2());
+// //  The last argument is the output you would like to show
 
-//  Objects
+// const getSum2 = new Function('x', 'y', 'return 1+1');
 
-const constantine = { name: 'John' };
+// console.log(getSum1(1, 1));
 
-console.log(constantine);
+// console.log(getSum2());
 
-const johnW = new Object({ name: 'J Constantine' });
+// //  Objects
 
-console.log(johnW);
+// const constantine = { name: 'John' };
 
-//  Arrays
+// console.log(constantine);
 
-const Arr1 = [1, 2, 3, 4, 5];
+// const johnW = new Object({ name: 'J Constantine' });
 
-const Arr2 = new Array([6, 7, 8, 9, 0]);
+// console.log(johnW);
 
-console.log(Arr1);
+// //  Arrays
 
-console.log(Arr2);
+// const Arr1 = [1, 2, 3, 4, 5];
 
-//  Regular expressions
+// const Arr2 = new Array([6, 7, 8, 9, 0]);
 
-const regEx1 = /\w+/; //Regular expression that searches for a word more than once
+// console.log(Arr1);
 
-const regEx2 = new RegExp('\\w+');
+// console.log(Arr2);
 
-console.log(regEx1); //  Prints the expression as expected
-console.log(regEx2); // Forward slash (/) missing if not escaped
+// //  Regular expressions
+
+// const regEx1 = /\w+/; //Regular expression that searches for a word more than once
+
+// const regEx2 = new RegExp('\\w+');
+
+// console.log(regEx1); //  Prints the expression as expected
+// console.log(regEx2); // Forward slash (/) missing if not escaped
 
 
 
@@ -2810,10 +2810,156 @@ console.log(regEx2); // Forward slash (/) missing if not escaped
 
 /* 
 
+- Each object in Javascript has a prototype
+- A protoype is an object itself
+- All objects inherit their methods and properties from protoype
+- When using object literals, you are in heriting from object.prototype
+- When dealing with objects made from a constructor, it comes from constructor.prototype
+- By default the date format is in mm/dd/yyyy
 
 
  */
 
+// object.prototype
+
+function Person2(FirstName, LastName, DOB) {
+    this.FirstName = FirstName;
+    this.LastName = LastName;
+    this.bday = new Date(DOB);
+
+}
+
+//  Calculate age and add it in object prototype
+
+Person2.prototype.calcAge = function() {
+    const diff = Date.now() - this.bday.getTime();
+
+    //  New age from the calculated difference
+
+    const ageDate = new Date(diff);
+
+    //  Return age as an absolute number
+
+    return Math.abs(ageDate.getUTCFullYear() - 1990);
+}
+
+//  Get full name
+
+Person2.prototype.getFullName = function() {
+    return `${this.FirstName} ${this.LastName} `;
+}
+
+//  Manupilating protoype data
+
+//  Change of LastName
+
+Person.prototype.changeLastName = function(newLastName) {
+    this.LastName = newLastName;
+}
+
+
+
+
+
+
+const taran = new Person2("Taran", "Singh", "8/8/1990");
+const sarah = new Person2("Leigh", "Anna", "7/24/1970");
+
+
+console.log(taran);
+console.log(sarah);
+
+console.log(sarah.calcAge());
+
+
+console.log(taran.getFullName());
+
+//Cannot change last name
+
+// sarah.changeLastName('Organa');
+
+console.log(sarah.getFullName());
+
+//  HasOwnProperty
+
+console.log(sarah.hasOwnProperty('LastName'));
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
+
+//  Prototypal inheritance
+
+
+/*
+
+ - One object type inherit from another
+
+
+
+ */
+
+function Person3(FirstName, LastName) {
+    this.FirstName = FirstName;
+    this.LastName = LastName;
+}
+
+//  Greeting
+
+Person3.prototype.greeting = function() {
+    return `Hi,  ${this.FirstName} ${this.LastName}`;
+}
+
+const per1 = new Person3('Sarah', 'Connor');
+
+console.log(per1.greeting());
+
+//  Customer Constructor
+
+function Customer(FirstName, LastName, Phone, Membership) {
+
+    //  Call another function inside a function in the current context
+
+    Person3.call(this, FirstName, LastName);
+
+    this.Phone = Phone;
+    this.Membership = Membership;
+
+
+}
+
+//  Inherit person prototype method
+
+Customer.prototype = Object.create(Person3.prototype);
+
+//  Return Customer
+
+Customer.prototype.constructor = Customer;
+
+//  Create Customer
+
+const cus1 = new Customer('Tom', 'Riddle', '123-4567-890', 'Standard');
+
+console.log(cus1);
+
+//  Customer Greeting
+
+Customer.prototype.greeting = function() {
+    return `Hi,  ${this.FirstName} ${this.LastName}`;
+}
 
 
 /*--------------------------------------------------------------------------------------------------- */
+
+//  Project 3 : Number Guesser
+
+/*--------------------------------------------------------------------------------------------------- */
+
+
+/*
+
+
+
+
+
+ */
