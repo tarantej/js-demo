@@ -2951,6 +2951,50 @@ Customer.prototype.greeting = function() {
 
 /*--------------------------------------------------------------------------------------------------- */
 
+//  Using object.create
+
+
+/*
+
+ - Create prototypes inside a parent object and different properties and methods
+
+
+
+ */
+
+
+const personPrototypes = {
+    greeting: function() {
+        return `Hi there ${this.FirstName} ${this.LastName}`;
+    },
+    changeLastName: function(newLastName) {
+        this.LastName = newLastName;
+    }
+}
+
+const obj = Object.create(personPrototypes);
+
+//  New object with additional parameters
+
+const obj2 = Object.create(personPrototypes, {
+    FirstName: { value: 'Taran' },
+    LastName: { value: 'Singh' }
+});
+
+//  Add Properties to object
+
+obj.FirstName = 'Leia';
+obj.LastName = 'Organa';
+
+obj.changeLastName('Anna');
+
+console.log(obj.greeting());
+
+console.log(obj2);
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
 //  Project 3 : Number Guesser
 
 /*--------------------------------------------------------------------------------------------------- */
