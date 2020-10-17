@@ -2995,6 +2995,105 @@ console.log(obj2);
 
 /*--------------------------------------------------------------------------------------------------- */
 
+//  ES6 Classes
+
+/* 
+
+ - Very similar to classes in objct oriented programming languages
+ - The object methods are called in prototype property of the object
+ - Static methods are methods that dont need to be initialized to display output. created with the keyword "static" before the method
+
+
+ */
+
+// Classes
+
+class Person4 {
+    constructor(firstName, lastName) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    greeting() {
+        return `Hi ${this.firstName} ${this.lastName}`;
+    }
+
+    static addNumbers(x, y) {
+        return x + y;
+    }
+}
+
+const rocky = new Person4('Taran', 'Singh');
+
+console.log(rocky);
+
+console.log(rocky.greeting());
+
+console.log(Person4.addNumbers(1, 2));
+
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
+//  Sub Classes
+
+
+/* 
+
+
+
+ */
+
+
+class Person5 {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    greeting() {
+        return `Hello ${this.firstName} ${this.lastName}`;
+    }
+}
+
+//  Inheriting properties  of Person class
+
+class Cust extends Person5 {
+    constructor(firstName, lastName, phone, membership) {
+
+        //  Call the property methods from the parent class 
+
+        super(firstName, lastName);
+
+        //  Initialize properties of the Customer class
+
+        this.phone = phone;
+        this.membership = membership;
+    }
+
+    static getMembershipcost() {
+        return 500;
+    }
+}
+
+//  Output
+
+const john = new Person5('John', 'Doe', '1234567890 ', 'Standard');
+
+console.log(john);
+
+console.log(john.greeting());
+
+console.log(Cust.getMembershipcost());
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------- */
+
 //  Project 3 : Number Guesser
 
 /*--------------------------------------------------------------------------------------------------- */
